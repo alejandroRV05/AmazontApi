@@ -248,7 +248,8 @@ class api extends Controller
 
         $perfil_usuario->save();
         return response()->json([
-            "message" => "Perfil de usuario creado"
+            "message" => "Perfil de usuario creado",
+            "perfil_usuario" => $perfil_usuario->id
         ], 201);
     }
 
