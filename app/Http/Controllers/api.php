@@ -13,23 +13,23 @@ use App\Models\valoraciones;
 use App\Models\caracteristicas;
 use Illuminate\Support\Facades\Hash;
 
-        //Perfil de usuario
-        //Usuarios
-        //Categorías
-        //Productos
-        //Producto Categorías
-        //Valoraciones
-        //Imágenes
-        //Características
+//Perfil de usuario
+//Usuarios
+//Categorías
+//Productos
+//Producto Categorías
+//Valoraciones
+//Imágenes
+//Características
 
 class api extends Controller
 {
     //Funciones get
-        //Perfil de usuario
+    //Perfil de usuario
     public function getPerfilUsuario()
     {
         $perfil_usuarios = perfil_usuario::all();
-        if($perfil_usuarios == null){
+        if ($perfil_usuarios == null) {
             return response()->json([
                 "message" => "Perfil de usuario no encontrado"
             ], 404);
@@ -41,7 +41,7 @@ class api extends Controller
     public function getPerfilUsuarioId($id)
     {
         $perfil_usuario = perfil_usuario::find($id);
-        if($perfil_usuario == null){
+        if ($perfil_usuario == null) {
             return response()->json([
                 "message" => "Perfil de usuario no encontrado"
             ], 404);
@@ -50,24 +50,23 @@ class api extends Controller
         return response()->json($perfil_usuario, 200);
     }
 
-        //Usuarios
+    //Usuarios
     public function getUsuarios()
     {
         $usuarios = User::all();
-        if($usuarios == null){
+        if ($usuarios == null) {
             return response()->json([
                 "message" => "Usuarios no encontrados"
             ], 404);
         }
 
         return response()->json($usuarios, 200);
-
     }
 
     public function getUsuarioId($id)
     {
         $usuario = User::find($id);
-        if($usuario == null){
+        if ($usuario == null) {
             return response()->json([
                 "message" => "Usuario no encontrado"
             ], 404);
@@ -76,11 +75,11 @@ class api extends Controller
         return response()->json($usuario, 200);
     }
 
-        //Categorías
+    //Categorías
     public function getCategorias()
     {
         $categorias = categoria::all();
-        if($categorias == null){
+        if ($categorias == null) {
             return response()->json([
                 "message" => "Categorías no encontradas"
             ], 404);
@@ -92,7 +91,7 @@ class api extends Controller
     public function getCategoriaId($id)
     {
         $categoria = categoria::find($id);
-        if($categoria == null){
+        if ($categoria == null) {
             return response()->json([
                 "message" => "Categoría no encontrada"
             ], 404);
@@ -101,11 +100,11 @@ class api extends Controller
         return response()->json($categoria, 200);
     }
 
-        //Productos
+    //Productos
     public function getProductos()
     {
         $productos = producto::all();
-        if($productos == null){
+        if ($productos == null) {
             return response()->json([
                 "message" => "Productos no encontrados"
             ], 404);
@@ -117,7 +116,7 @@ class api extends Controller
     public function getProductoId($id)
     {
         $producto = producto::find($id);
-        if($producto == null){
+        if ($producto == null) {
             return response()->json([
                 "message" => "Producto no encontrado"
             ], 404);
@@ -126,11 +125,11 @@ class api extends Controller
         return response()->json($producto, 200);
     }
 
-        //Producto Categorías
+    //Producto Categorías
     public function getProductoCategorias()
     {
         $productoCategorias = productoCategorias::all();
-        if($productoCategorias == null){
+        if ($productoCategorias == null) {
             return response()->json([
                 "message" => "Producto Categorías no encontradas"
             ], 404);
@@ -142,7 +141,7 @@ class api extends Controller
     public function getProductoCategoriasId($id)
     {
         $productoCategorias = productoCategorias::find($id);
-        if($productoCategorias == null){
+        if ($productoCategorias == null) {
             return response()->json([
                 "message" => "Producto Categorías no encontradas"
             ], 404);
@@ -151,11 +150,11 @@ class api extends Controller
         return response()->json($productoCategorias, 200);
     }
 
-        //Valoraciones
+    //Valoraciones
     public function getValoraciones()
     {
         $valoraciones = valoraciones::all();
-        if($valoraciones == null){
+        if ($valoraciones == null) {
             return response()->json([
                 "message" => "Valoraciones no encontradas"
             ], 404);
@@ -167,7 +166,7 @@ class api extends Controller
     public function getValoracionesId($id)
     {
         $valoraciones = valoraciones::find($id);
-        if($valoraciones == null){
+        if ($valoraciones == null) {
             return response()->json([
                 "message" => "Valoraciones no encontradas"
             ], 404);
@@ -176,11 +175,11 @@ class api extends Controller
         return response()->json($valoraciones, 200);
     }
 
-        //Imágenes
+    //Imágenes
     public function getImagenes()
     {
         $imagenes = imagenes::all();
-        if($imagenes == null){
+        if ($imagenes == null) {
             return response()->json([
                 "message" => "Imágenes no encontradas"
             ], 404);
@@ -192,7 +191,7 @@ class api extends Controller
     public function getImagenesId($id)
     {
         $imagenes = imagenes::find($id);
-        if($imagenes == null){
+        if ($imagenes == null) {
             return response()->json([
                 "message" => "Imágenes no encontradas"
             ], 404);
@@ -201,11 +200,11 @@ class api extends Controller
         return response()->json($imagenes, 200);
     }
 
-        //Características
+    //Características
     public function getCaracteristicas()
     {
         $caracteristicas = caracteristicas::all();
-        if($caracteristicas == null){
+        if ($caracteristicas == null) {
             return response()->json([
                 "message" => "Características no encontradas"
             ], 404);
@@ -217,7 +216,7 @@ class api extends Controller
     public function getCaracteristicasId($id)
     {
         $caracteristicas = caracteristicas::find($id);
-        if($caracteristicas == null){
+        if ($caracteristicas == null) {
             return response()->json([
                 "message" => "Características no encontradas"
             ], 404);
@@ -228,12 +227,16 @@ class api extends Controller
 
 
     //Funciones post
-        //Perfil de usuario
+    //Perfil de usuario
     public function postPerfilUsuario(Request $request)
     {
+<<<<<<< HEAD
         if($request->nombre == null || $request->apellidos == null || $request->fecha_nacimiento == null || $request->direccion == null || $request->telefono == null || $request->genero == null){
+=======
+        if ($request->nombre == null || $request->apellidos == null || $request->fecha_nacimiento == null || $request->direccion == null || $request->telefono == null || $request->genero == null) {
+>>>>>>> 1cbc7fc6f5df0a1cee47e5193623c15908a07340
             return response()->json([
-                "message" => "Error, el perfil de usuario debe tener nombre, apellidos, fecha de nacimiento, dirección, teléfono, género e imagen de usuario"
+                "message" => "Error, el perfil de usuario debe tener nombre, apellidos, fecha de nacimiento, dirección, teléfono y género"
             ], 400);
         }
 
@@ -244,9 +247,17 @@ class api extends Controller
         $perfil_usuario->direccion = $request->direccion;
         $perfil_usuario->telefono = $request->telefono;
         $perfil_usuario->genero = $request->genero;
+<<<<<<< HEAD
         if($request->imagen_usuario){
             $perfil_usuario->imagen_usuario = $request->imagen_usuario;
         }
+=======
+
+        // Asignar imagen_usuario si existe en la solicitud, o un valor predeterminado si no
+        $perfil_usuario->imagen_usuario = $request->has('imagen_usuario')
+            ? $request->imagen_usuario
+            : 'default.jpg';
+>>>>>>> 1cbc7fc6f5df0a1cee47e5193623c15908a07340
 
         $perfil_usuario->save();
         return response()->json([
@@ -255,11 +266,15 @@ class api extends Controller
         ], 201);
     }
 
-        //Usuarios
+    //Usuarios
     public function postUsuario(Request $request)
     {
+<<<<<<< HEAD
         // print_r($request);
         if($request->email == null || $request->password == null || $request->rol == null || $request->user_profile_id == null){
+=======
+        if ($request->email == null || $request->password == null || $request->rol == null || $request->user_profile_id == null) {
+>>>>>>> 1cbc7fc6f5df0a1cee47e5193623c15908a07340
             return response()->json([
                 "message" => "Error, el usuario debe tener email, password, rol y user_profile_id"
             ], 400);
@@ -279,10 +294,10 @@ class api extends Controller
         ], 201);
     }
 
-        //Categorías
+    //Categorías
     public function postCategoria(Request $request)
     {
-        if($request->nombre == null || $request->inicio == null){
+        if ($request->nombre == null || $request->inicio == null) {
             return response()->json([
                 "message" => "Error, la categoría debe tener nombre e inicio"
             ], 400);
@@ -298,10 +313,10 @@ class api extends Controller
         ], 201);
     }
 
-        //Productos
+    //Productos
     public function postProducto(Request $request)
     {
-        if($request->nombre == null || $request->precio == null || $request->descuento == null || $request->descripcion == null || $request->stock == null || $request->inicio == null){
+        if ($request->nombre == null || $request->precio == null || $request->descuento == null || $request->descripcion == null || $request->stock == null || $request->inicio == null) {
             return response()->json([
                 "message" => "Error, el producto debe tener nombre, precio, descuento, descripción, stock e inicio"
             ], 400);
@@ -321,10 +336,10 @@ class api extends Controller
         ], 201);
     }
 
-        //Producto Categorías
+    //Producto Categorías
     public function postProductoCategorias(Request $request)
     {
-        if($request->producto_id == null || $request->categoria_id == null){
+        if ($request->producto_id == null || $request->categoria_id == null) {
             return response()->json([
                 "message" => "Error, el producto categoría debe tener producto_id y categoría_id"
             ], 400);
@@ -340,10 +355,10 @@ class api extends Controller
         ], 201);
     }
 
-        //Valoraciones
+    //Valoraciones
     public function postValoraciones(Request $request)
     {
-        if($request->review == null || $request->puntuacion == null || $request->fecha == null || $request->util == null || $request->usuario_id == null || $request->producto_id == null){
+        if ($request->review == null || $request->puntuacion == null || $request->fecha == null || $request->util == null || $request->usuario_id == null || $request->producto_id == null) {
             return response()->json([
                 "message" => "Error, la valoración debe tener review, puntuación, fecha, util, usuario_id y producto_id"
             ], 400);
@@ -363,10 +378,10 @@ class api extends Controller
         ], 201);
     }
 
-        //Imágenes
+    //Imágenes
     public function postImagenes(Request $request)
     {
-        if($request->url == null || $request->producto_id == null){
+        if ($request->url == null || $request->producto_id == null) {
             return response()->json([
                 "message" => "Error, la imagen debe tener url y producto_id"
             ], 400);
@@ -382,10 +397,10 @@ class api extends Controller
         ], 201);
     }
 
-        //Características
+    //Características
     public function postCaracteristicas(Request $request)
     {
-        if($request->texto == null || $request->producto_id == null){
+        if ($request->texto == null || $request->producto_id == null) {
             return response()->json([
                 "message" => "Error, la característica debe tener texto y producto_id"
             ], 400);
@@ -405,17 +420,17 @@ class api extends Controller
 
 
     //Funciones put
-        //Perfil de usuario
+    //Perfil de usuario
     public function putPerfilUsuario(Request $request, $id)
     {
         $perfil_usuario = perfil_usuario::find($id);
-        if($perfil_usuario == null){
+        if ($perfil_usuario == null) {
             return response()->json([
                 "message" => "Perfil de usuario no encontrado"
             ], 404);
         }
 
-        if($request->nombre == null || $request->apellidos == null || $request->fecha_nacimiento == null || $request->direccion == null || $request->telefono == null || $request->genero == null || $request->imagen_usuario == null){
+        if ($request->nombre == null || $request->apellidos == null || $request->fecha_nacimiento == null || $request->direccion == null || $request->telefono == null || $request->genero == null || $request->imagen_usuario == null) {
             return response()->json([
                 "message" => "Error, el perfil de usuario debe tener nombre, apellidos, fecha de nacimiento, dirección, teléfono, género e imagen de usuario"
             ], 400);
@@ -435,17 +450,17 @@ class api extends Controller
         ], 200);
     }
 
-        //Usuarios
+    //Usuarios
     public function putUsuario(Request $request, $id)
     {
         $usuario = User::find($id);
-        if($usuario == null){
+        if ($usuario == null) {
             return response()->json([
                 "message" => "Usuario no encontrado"
             ], 404);
         }
 
-        if($request->email == null || $request->password == null || $request->rol == null || $request->user_profile_id == null){
+        if ($request->email == null || $request->password == null || $request->rol == null || $request->user_profile_id == null) {
             return response()->json([
                 "message" => "Error, el usuario debe tener email, password y user_profile_id"
             ], 400);
@@ -462,17 +477,17 @@ class api extends Controller
         ], 200);
     }
 
-        //Categorías
+    //Categorías
     public function putCategoria(Request $request, $id)
     {
         $categoria = categoria::find($id);
-        if($categoria == null){
+        if ($categoria == null) {
             return response()->json([
                 "message" => "Categoría no encontrada"
             ], 404);
         }
 
-        if($request->nombre == null || $request->inicio == null){
+        if ($request->nombre == null || $request->inicio == null) {
             return response()->json([
                 "message" => "Error, la categoría debe tener nombre e inicio"
             ], 400);
@@ -487,17 +502,17 @@ class api extends Controller
         ], 200);
     }
 
-        //Productos
+    //Productos
     public function putProducto(Request $request, $id)
     {
         $producto = producto::find($id);
-        if($producto == null){
+        if ($producto == null) {
             return response()->json([
                 "message" => "Producto no encontrado"
             ], 404);
         }
 
-        if($request->nombre == null || $request->precio == null || $request->descuento == null || $request->descripcion == null || $request->stock == null || $request->inicio == null){
+        if ($request->nombre == null || $request->precio == null || $request->descuento == null || $request->descripcion == null || $request->stock == null || $request->inicio == null) {
             return response()->json([
                 "message" => "Error, el producto debe tener nombre, precio, descuento, descripción, stock e inicio"
             ], 400);
@@ -506,16 +521,16 @@ class api extends Controller
         $producto->nombre = $request->nombre;
         $producto->precio = $request->precio;
 
-        if($request->descuento != null){
+        if ($request->descuento != null) {
             $producto->descuento = $request->descuento;
         }
-        if($request->descripcion != null){
+        if ($request->descripcion != null) {
             $producto->descripcion = $request->descripcion;
         }
-        if($request->stock != null){
+        if ($request->stock != null) {
             $producto->stock = $request->stock;
         }
-        if($request->inicio != null){
+        if ($request->inicio != null) {
             $producto->inicio = $request->inicio;
         }
 
@@ -525,17 +540,17 @@ class api extends Controller
         ], 200);
     }
 
-        //Producto Categorías
+    //Producto Categorías
     public function putProductoCategorias(Request $request, $id)
     {
         $productoCategorias = productoCategorias::find($id);
-        if($productoCategorias == null){
+        if ($productoCategorias == null) {
             return response()->json([
                 "message" => "Producto Categorías no encontradas"
             ], 404);
         }
 
-        if($request->producto_id == null || $request->categoria_id == null){
+        if ($request->producto_id == null || $request->categoria_id == null) {
             return response()->json([
                 "message" => "Error, el producto categoría debe tener producto_id y categoría_id"
             ], 400);
@@ -550,17 +565,17 @@ class api extends Controller
         ], 200);
     }
 
-        //Valoraciones
+    //Valoraciones
     public function putValoraciones(Request $request, $id)
     {
         $valoraciones = valoraciones::find($id);
-        if($valoraciones == null){
+        if ($valoraciones == null) {
             return response()->json([
                 "message" => "Valoraciones no encontradas"
             ], 404);
         }
 
-        if($request->review == null || $request->puntuacion == null || $request->fecha == null || $request->util == null || $request->usuario_id == null || $request->producto_id == null){
+        if ($request->review == null || $request->puntuacion == null || $request->fecha == null || $request->util == null || $request->usuario_id == null || $request->producto_id == null) {
             return response()->json([
                 "message" => "Error, la valoración debe tener review, puntuación, fecha, util, usuario_id y producto_id"
             ], 400);
@@ -579,17 +594,17 @@ class api extends Controller
         ], 200);
     }
 
-        //Imágenes
+    //Imágenes
     public function putImagenes(Request $request, $id)
     {
         $imagenes = imagenes::find($id);
-        if($imagenes == null){
+        if ($imagenes == null) {
             return response()->json([
                 "message" => "Imágenes no encontradas"
             ], 404);
         }
 
-        if($request->url == null || $request->producto_id == null){
+        if ($request->url == null || $request->producto_id == null) {
             return response()->json([
                 "message" => "Error, la imagen debe tener url y producto_id"
             ], 400);
@@ -604,18 +619,18 @@ class api extends Controller
         ], 200);
     }
 
-        //Características
+    //Características
 
     public function putCaracteristicas(Request $request, $id)
     {
         $caracteristicas = caracteristicas::find($id);
-        if($caracteristicas == null){
+        if ($caracteristicas == null) {
             return response()->json([
                 "message" => "Características no encontradas"
             ], 404);
         }
 
-        if($request->texto == null || $request->producto_id == null){
+        if ($request->texto == null || $request->producto_id == null) {
             return response()->json([
                 "message" => "Error, la característica debe tener texto y producto_id"
             ], 400);
@@ -631,11 +646,11 @@ class api extends Controller
     }
 
     //Funciones delete
-        //Perfil de usuario
+    //Perfil de usuario
     public function deletePerfilUsuario($id)
     {
         $perfil_usuario = perfil_usuario::find($id);
-        if($perfil_usuario == null){
+        if ($perfil_usuario == null) {
             return response()->json([
                 "message" => "Perfil de usuario no encontrado"
             ], 404);
@@ -647,11 +662,11 @@ class api extends Controller
         ], 200);
     }
 
-        //Usuarios
+    //Usuarios
     public function deleteUsuario($id)
     {
         $usuario = User::find($id);
-        if($usuario == null){
+        if ($usuario == null) {
             return response()->json([
                 "message" => "Usuario no encontrado"
             ], 404);
@@ -663,11 +678,11 @@ class api extends Controller
         ], 200);
     }
 
-        //Categorías
+    //Categorías
     public function deleteCategoria($id)
     {
         $categoria = categoria::find($id);
-        if($categoria == null){
+        if ($categoria == null) {
             return response()->json([
                 "message" => "Categoría no encontrada"
             ], 404);
@@ -679,11 +694,11 @@ class api extends Controller
         ], 200);
     }
 
-        //Productos
+    //Productos
     public function deleteProducto($id)
     {
         $producto = producto::find($id);
-        if($producto == null){
+        if ($producto == null) {
             return response()->json([
                 "message" => "Producto no encontrado"
             ], 404);
@@ -695,11 +710,11 @@ class api extends Controller
         ], 200);
     }
 
-        //Producto Categorías
+    //Producto Categorías
     public function deleteProductoCategorias($id)
     {
         $productoCategorias = productoCategorias::find($id);
-        if($productoCategorias == null){
+        if ($productoCategorias == null) {
             return response()->json([
                 "message" => "Producto Categorías no encontradas"
             ], 404);
@@ -711,11 +726,11 @@ class api extends Controller
         ], 200);
     }
 
-        //Valoraciones
+    //Valoraciones
     public function deleteValoraciones($id)
     {
         $valoraciones = valoraciones::find($id);
-        if($valoraciones == null){
+        if ($valoraciones == null) {
             return response()->json([
                 "message" => "Valoraciones no encontradas"
             ], 404);
@@ -727,11 +742,11 @@ class api extends Controller
         ], 200);
     }
 
-        //Imágenes
+    //Imágenes
     public function deleteImagenes($id)
     {
         $imagenes = imagenes::find($id);
-        if($imagenes == null){
+        if ($imagenes == null) {
             return response()->json([
                 "message" => "Imágenes no encontradas"
             ], 404);
@@ -743,11 +758,11 @@ class api extends Controller
         ], 200);
     }
 
-        //Características
+    //Características
     public function deleteCaracteristicas($id)
     {
         $caracteristicas = caracteristicas::find($id);
-        if($caracteristicas == null){
+        if ($caracteristicas == null) {
             return response()->json([
                 "message" => "Características no encontradas"
             ], 404);
@@ -763,19 +778,19 @@ class api extends Controller
     public function login(Request $request)
     {
         $usuario = User::where('email', $request->email)->first();
-        if($usuario == null){
+        if ($usuario == null) {
             return response()->json([
                 "message" => "Usuario no encontrado"
             ], 404);
         }
 
         //Comprobar la contraseña que ha sido encriptada con bcrypt
-        if(Hash::check($request->password, $usuario->password)){
+        if (Hash::check($request->password, $usuario->password)) {
             return response()->json([
                 "message" => "Usuario logeado",
                 "usuario" => $usuario
             ], 200);
-        }else{
+        } else {
             return response()->json([
                 "message" => "Contraseña incorrecta"
             ], 400);
