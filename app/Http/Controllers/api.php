@@ -230,11 +230,7 @@ class api extends Controller
     //Perfil de usuario
     public function postPerfilUsuario(Request $request)
     {
-<<<<<<< HEAD
-        if($request->nombre == null || $request->apellidos == null || $request->fecha_nacimiento == null || $request->direccion == null || $request->telefono == null || $request->genero == null){
-=======
         if ($request->nombre == null || $request->apellidos == null || $request->fecha_nacimiento == null || $request->direccion == null || $request->telefono == null || $request->genero == null) {
->>>>>>> 1cbc7fc6f5df0a1cee47e5193623c15908a07340
             return response()->json([
                 "message" => "Error, el perfil de usuario debe tener nombre, apellidos, fecha de nacimiento, dirección, teléfono y género"
             ], 400);
@@ -247,17 +243,14 @@ class api extends Controller
         $perfil_usuario->direccion = $request->direccion;
         $perfil_usuario->telefono = $request->telefono;
         $perfil_usuario->genero = $request->genero;
-<<<<<<< HEAD
         if($request->imagen_usuario){
             $perfil_usuario->imagen_usuario = $request->imagen_usuario;
         }
-=======
 
         // Asignar imagen_usuario si existe en la solicitud, o un valor predeterminado si no
         $perfil_usuario->imagen_usuario = $request->has('imagen_usuario')
             ? $request->imagen_usuario
             : 'default.jpg';
->>>>>>> 1cbc7fc6f5df0a1cee47e5193623c15908a07340
 
         $perfil_usuario->save();
         return response()->json([
@@ -269,12 +262,8 @@ class api extends Controller
     //Usuarios
     public function postUsuario(Request $request)
     {
-<<<<<<< HEAD
         // print_r($request);
-        if($request->email == null || $request->password == null || $request->rol == null || $request->user_profile_id == null){
-=======
         if ($request->email == null || $request->password == null || $request->rol == null || $request->user_profile_id == null) {
->>>>>>> 1cbc7fc6f5df0a1cee47e5193623c15908a07340
             return response()->json([
                 "message" => "Error, el usuario debe tener email, password, rol y user_profile_id"
             ], 400);
@@ -293,6 +282,7 @@ class api extends Controller
             "message" => "Usuario creado"
         ], 201);
     }
+
 
     //Categorías
     public function postCategoria(Request $request)
