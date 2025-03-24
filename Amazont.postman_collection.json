@@ -102,7 +102,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\":\"ejemplo@ejemplo.com\",\n    \"password\":\"password\",\n    \"rol\":\"1\",\n    \"user_profile_id\":\"2\"\n}",
+							"raw": "{\n    \"email\":\"user@user.com\",\n    \"password\":\"user\",\n    \"rol\":\"1\",\n    \"user_profile_id\":\"2\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -549,6 +549,24 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"user@user.com\",\n    \"password\":\"user\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/api/login/"
+			},
+			"response": []
 		}
 	]
 }

@@ -231,7 +231,7 @@ class api extends Controller
         //Perfil de usuario
     public function postPerfilUsuario(Request $request)
     {
-        if($request->nombre == null || $request->apellidos == null || $request->fecha_nacimiento == null || $request->direccion == null || $request->telefono == null || $request->genero == null || $request->imagen_usuario == null){
+        if($request->nombre == null || $request->apellidos == null || $request->fecha_nacimiento == null || $request->direccion == null || $request->telefono == null || $request->genero == null){
             return response()->json([
                 "message" => "Error, el perfil de usuario debe tener nombre, apellidos, fecha de nacimiento, dirección, teléfono, género e imagen de usuario"
             ], 400);
@@ -244,7 +244,9 @@ class api extends Controller
         $perfil_usuario->direccion = $request->direccion;
         $perfil_usuario->telefono = $request->telefono;
         $perfil_usuario->genero = $request->genero;
-        $perfil_usuario->imagen_usuario = $request->imagen_usuario;
+        if($request->imagen_usuario){
+            $perfil_usuario->imagen_usuario = $request->imagen_usuario;
+        }
 
         $perfil_usuario->save();
         return response()->json([
@@ -256,11 +258,14 @@ class api extends Controller
         //Usuarios
     public function postUsuario(Request $request)
     {
+        // print_r($request);
         if($request->email == null || $request->password == null || $request->rol == null || $request->user_profile_id == null){
             return response()->json([
                 "message" => "Error, el usuario debe tener email, password, rol y user_profile_id"
             ], 400);
         }
+
+
 
         $usuario = new User;
         $usuario->email = $request->email;
